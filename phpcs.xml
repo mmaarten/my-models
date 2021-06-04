@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
-<ruleset name="My Icons">
-  <description>My Icons Coding Standards</description>
+<ruleset name="My Models">
+  <description>My Models Coding Standards</description>
 
   <!-- Check all files in this directory and the directories below it. -->
   <file>.</file>
 
   <!-- Exclude patterns. -->
 	<exclude-pattern>/vendor/*</exclude-pattern>
-  <exclude-pattern>/node_modules/*</exclude-pattern>
 
   <!-- Only check the PHP files. -->
 	<arg name="extensions" value="php"/>
