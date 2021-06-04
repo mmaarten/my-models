@@ -82,6 +82,21 @@ class Post
         return wp_set_object_terms($this->ID, $terms, $taxonomy, $append);
     }
 
+    public function hasTerm($term = '', $taxonomy = '')
+    {
+        return has_term($term, $taxonomy, $this->ID);
+    }
+
+    public function theTerms($taxonomy, $before = '', $sep = ', ', $after = '')
+    {
+        return the_terms($this->ID, $taxonomy, $before, $sep, $after);
+    }
+
+    public function getTheTermList($taxonomy, $before = '', $sep = '', $after = '')
+    {
+        return get_the_term_list($this->ID, $taxonomy, $before, $sep, $after);
+    }
+
     public function getField($selector, $format_value = true)
     {
         if (function_exists('get_field')) {
