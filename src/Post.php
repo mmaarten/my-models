@@ -4,7 +4,7 @@ namespace My\Models;
 
 class Post
 {
-    private $post = null;
+    protected $post = null;
 
     public function __construct($post = null)
     {
@@ -95,6 +95,14 @@ class Post
     public function getTheTermList($taxonomy, $before = '', $sep = '', $after = '')
     {
         return get_the_term_list($this->ID, $taxonomy, $before, $sep, $after);
+    }
+
+    public function save($wp_error = false, $fire_after_hooks = true) {
+        return wp_insert_post(get_object_vars($this->post), $wp_error, $fire_after_hooks);
+    }
+
+    public function delete($force_delete = false) {
+        return wp_delete_post($this->ID, $force_delete);
     }
 
     public function getField($selector, $format_value = true)
