@@ -52,6 +52,11 @@ class Post
         return metadata_exists('post', $this->ID, $meta_key);
     }
 
+    public function getPermalink()
+    {
+        return get_permalink($this->ID);
+    }
+
     public function getThumbnailID()
     {
         return get_post_thumbnail_id($this->ID);
